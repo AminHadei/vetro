@@ -7,3 +7,6 @@ export { default as CardHeader } from './components/Card/CardHeader.vue';
 export { default as CardTitle } from './components/Card/CardTitle.vue';
 export { default as CardDescription } from './components/Card/CardDescription.vue';
 export { default as CardContent } from './components/Card/CardContent.vue';
+export { default as Avatar } from './components/Avatar/Avatar.vue';
+export { default as AvatarImage } from './components/Avatar/AvatarImage.vue';
+export { default as AvatarFallback } from './components/Avatar/AvatarFallback.vue';
