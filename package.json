@@ -1,6 +1,6 @@
 {
   "name": "vetro",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Vetro UI — Vue 3 + TypeScript neo-brutalist component library (lib + web components), a Vue port of RetroUI",
   "files": [
     "dist"
