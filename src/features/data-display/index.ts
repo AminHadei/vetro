@@ -10,3 +10,5 @@ export { default as CardContent } from './components/Card/CardContent.vue';
 export { default as Avatar } from './components/Avatar/Avatar.vue';
 export { default as AvatarImage } from './components/Avatar/AvatarImage.vue';
 export { default as AvatarFallback } from './components/Avatar/AvatarFallback.vue';
+export { default as Loader } from './components/Loader/Loader.vue';
+export type { LoaderVariant, LoaderSize } from './components/Loader/loader.types';
