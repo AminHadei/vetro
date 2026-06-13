@@ -13,3 +13,9 @@ export { default as AvatarFallback } from './components/Avatar/AvatarFallback.vu
 export { default as Loader } from './components/Loader/Loader.vue';
 export type { LoaderVariant, LoaderSize } from './components/Loader/loader.types';
 export { default as Progress } from './components/Progress/Progress.vue';
+export { default as Empty } from './components/Empty/Empty.vue';
+export { default as EmptyContent } from './components/Empty/EmptyContent.vue';
+export { default as EmptyIcon } from './components/Empty/EmptyIcon.vue';
+export { default as EmptyTitle } from './components/Empty/EmptyTitle.vue';
+export { default as EmptySeparator } from './components/Empty/EmptySeparator.vue';
+export { default as EmptyDescription } from './components/Empty/EmptyDescription.vue';
