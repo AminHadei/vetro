@@ -3,3 +3,4 @@ export { default as Label } from './components/Label/Label.vue';
 export { default as Textarea } from './components/Textarea/Textarea.vue';
 export { default as Checkbox } from './components/Checkbox/Checkbox.vue';
 export type { CheckboxVariant, CheckboxSize } from './components/Checkbox/checkbox.types';
+export { default as Switch } from './components/Switch/Switch.vue';
