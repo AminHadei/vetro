@@ -4,3 +4,6 @@ export { default as Textarea } from './components/Textarea/Textarea.vue';
 export { default as Checkbox } from './components/Checkbox/Checkbox.vue';
 export type { CheckboxVariant, CheckboxSize } from './components/Checkbox/checkbox.types';
 export { default as Switch } from './components/Switch/Switch.vue';
+export { default as RadioGroup } from './components/Radio/RadioGroup.vue';
+export { default as RadioGroupItem } from './components/Radio/RadioGroupItem.vue';
+export type { RadioVariant, RadioSize } from './components/Radio/radio.types';
