@@ -21,3 +21,4 @@ export { default as Field } from './components/Field/Field.vue';
 export { default as FieldLabel } from './components/Field/FieldLabel.vue';
 export { default as FieldDescription } from './components/Field/FieldDescription.vue';
 export { default as FieldError } from './components/Field/FieldError.vue';
+export { default as Slider } from './components/Slider/Slider.vue';
