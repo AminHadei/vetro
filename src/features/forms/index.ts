@@ -22,3 +22,5 @@ export { default as FieldLabel } from './components/Field/FieldLabel.vue';
 export { default as FieldDescription } from './components/Field/FieldDescription.vue';
 export { default as FieldError } from './components/Field/FieldError.vue';
 export { default as Slider } from './components/Slider/Slider.vue';
+export { default as Toggle } from './components/Toggle/Toggle.vue';
+export type { ToggleVariant, ToggleSize } from './components/Toggle/toggle.types';
