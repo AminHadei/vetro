@@ -24,3 +24,5 @@ export { default as FieldError } from './components/Field/FieldError.vue';
 export { default as Slider } from './components/Slider/Slider.vue';
 export { default as Toggle } from './components/Toggle/Toggle.vue';
 export type { ToggleVariant, ToggleSize } from './components/Toggle/toggle.types';
+export { default as ToggleGroup } from './components/ToggleGroup/ToggleGroup.vue';
+export { default as ToggleGroupItem } from './components/ToggleGroup/ToggleGroupItem.vue';
