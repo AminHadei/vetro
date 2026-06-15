@@ -26,3 +26,4 @@ export { default as Toggle } from './components/Toggle/Toggle.vue';
 export type { ToggleVariant, ToggleSize } from './components/Toggle/toggle.types';
 export { default as ToggleGroup } from './components/ToggleGroup/ToggleGroup.vue';
 export { default as ToggleGroupItem } from './components/ToggleGroup/ToggleGroupItem.vue';
+export { default as Calendar } from './components/Calendar/Calendar.vue';
