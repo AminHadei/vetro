@@ -17,3 +17,7 @@ export { default as SelectLabel } from './components/Select/SelectLabel.vue';
 export { default as SelectSeparator } from './components/Select/SelectSeparator.vue';
 export { default as SelectScrollUpButton } from './components/Select/SelectScrollUpButton.vue';
 export { default as SelectScrollDownButton } from './components/Select/SelectScrollDownButton.vue';
+export { default as Field } from './components/Field/Field.vue';
+export { default as FieldLabel } from './components/Field/FieldLabel.vue';
+export { default as FieldDescription } from './components/Field/FieldDescription.vue';
+export { default as FieldError } from './components/Field/FieldError.vue';
