@@ -13,3 +13,13 @@ export { default as PopoverContent } from './components/Popover/PopoverContent.v
 export { default as PopoverHeader } from './components/Popover/PopoverHeader.vue';
 export { default as PopoverTitle } from './components/Popover/PopoverTitle.vue';
 export { default as PopoverDescription } from './components/Popover/PopoverDescription.vue';
+export { default as Dialog } from './components/Dialog/Dialog.vue';
+export { default as DialogTrigger } from './components/Dialog/DialogTrigger.vue';
+export { default as DialogContent } from './components/Dialog/DialogContent.vue';
+export { default as DialogHeader } from './components/Dialog/DialogHeader.vue';
+export { default as DialogTitle } from './components/Dialog/DialogTitle.vue';
+export { default as DialogDescription } from './components/Dialog/DialogDescription.vue';
+export { default as DialogBody } from './components/Dialog/DialogBody.vue';
+export { default as DialogFooter } from './components/Dialog/DialogFooter.vue';
+export { default as DialogClose } from './components/Dialog/DialogClose.vue';
+export type { DialogSize } from './components/Dialog/dialog.types';
