@@ -7,3 +7,9 @@ export { default as TooltipProvider } from './components/Tooltip/TooltipProvider
 export { default as TooltipTrigger } from './components/Tooltip/TooltipTrigger.vue';
 export { default as TooltipContent } from './components/Tooltip/TooltipContent.vue';
 export type { TooltipVariant } from './components/Tooltip/tooltip.types';
+export { default as Popover } from './components/Popover/Popover.vue';
+export { default as PopoverTrigger } from './components/Popover/PopoverTrigger.vue';
+export { default as PopoverContent } from './components/Popover/PopoverContent.vue';
+export { default as PopoverHeader } from './components/Popover/PopoverHeader.vue';
+export { default as PopoverTitle } from './components/Popover/PopoverTitle.vue';
+export { default as PopoverDescription } from './components/Popover/PopoverDescription.vue';
