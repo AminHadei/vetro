@@ -32,3 +32,5 @@ export { default as DrawerDescription } from './components/Drawer/DrawerDescript
 export { default as DrawerFooter } from './components/Drawer/DrawerFooter.vue';
 export { default as DrawerClose } from './components/Drawer/DrawerClose.vue';
 export type { DrawerDirection } from './components/Drawer/drawer.context';
+export { default as Toaster } from './components/Toaster/Toaster.vue';
+export { toast } from 'vue-sonner';
