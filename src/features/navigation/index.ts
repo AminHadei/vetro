@@ -13,3 +13,7 @@ export { default as BreadcrumbLink } from './components/Breadcrumb/BreadcrumbLin
 export { default as BreadcrumbPage } from './components/Breadcrumb/BreadcrumbPage.vue';
 export { default as BreadcrumbSeparator } from './components/Breadcrumb/BreadcrumbSeparator.vue';
 export { default as BreadcrumbEllipsis } from './components/Breadcrumb/BreadcrumbEllipsis.vue';
+export { default as Menu } from './components/Menu/Menu.vue';
+export { default as MenuTrigger } from './components/Menu/MenuTrigger.vue';
+export { default as MenuContent } from './components/Menu/MenuContent.vue';
+export { default as MenuItem } from './components/Menu/MenuItem.vue';
