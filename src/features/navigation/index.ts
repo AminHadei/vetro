@@ -24,3 +24,5 @@ export { default as ContextMenuItem } from './components/ContextMenu/ContextMenu
 export { default as ContextMenuLabel } from './components/ContextMenu/ContextMenuLabel.vue';
 export { default as ContextMenuSeparator } from './components/ContextMenu/ContextMenuSeparator.vue';
 export { default as ContextMenuShortcut } from './components/ContextMenu/ContextMenuShortcut.vue';
+export { default as TableOfContents } from './components/TableOfContents/TableOfContents.vue';
+export type { TocItem } from './components/TableOfContents/toc.types';
