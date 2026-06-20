@@ -7,3 +7,4 @@ export { default as CommandItem } from './components/Command/CommandItem.vue';
 export { default as CommandSeparator } from './components/Command/CommandSeparator.vue';
 export { default as CommandShortcut } from './components/Command/CommandShortcut.vue';
 export { default as CommandDialog } from './components/Command/CommandDialog.vue';
+export { default as CommandDisplay } from './components/CommandDisplay/CommandDisplay.vue';
