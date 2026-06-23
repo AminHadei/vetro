@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+}
+
+.playground-shell {
+  min-height: 100vh;
+  background: var(--background);
+  color: var(--foreground);
+}
+
+.playground-main {
+  margin: 0 auto;
+  max-width: 48rem;
+  padding: 2.5rem 1rem 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.playground-header h1 {
+  font-family: 'Archivo Black', system-ui, sans-serif;
+  font-size: 2.25rem;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.playground-header p {
+  margin: 0.5rem 0 0;
+  color: var(--muted-foreground);
+}
+
+.playground-theme {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.playground-theme select,
+.playground-theme input[type='checkbox'] {
+  accent-color: var(--primary);
+}
+
+.playground-section {
+  background: var(--card);
+  border: 2px solid var(--border);
+  box-shadow: 4px 4px 0 var(--border);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.playground-section h2 {
+  font-family: 'Archivo Black', system-ui, sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.playground-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.playground-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 28rem;
+}
+
+.playground-charts {
+  display: grid;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.playground-chart-host {
+  display: block;
+  width: 100%;
+  height: 20rem;
+  min-height: 20rem;
+}
+
+.playground-chart-host > *,
+.playground-chart-host vetro-bar-chart,
+.playground-chart-host vetro-line-chart,
+.playground-chart-host vetro-area-chart,
+.playground-chart-host vetro-pie-chart {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 20rem;
+}
+
+.playground-muted {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+}
