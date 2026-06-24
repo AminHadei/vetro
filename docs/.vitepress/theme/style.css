@@ -1,0 +1,134 @@
+/* Vetro UI docs — VitePress theme overrides.
+ * Neo-brutalist palette. Mirrors uno.config.ts; keep in sync. */
+
+:root {
+  --vetro-50: #fafafa;
+  --vetro-100: #f5f5f5;
+  --vetro-200: #e5e5e5;
+  --vetro-300: #d4d4d4;
+  --vetro-400: #a3a3a3;
+  --vetro-500: #737373;
+  --vetro-600: #525252;
+  --vetro-700: #404040;
+  --vetro-800: #262626;
+  --vetro-900: #171717;
+  --vetro-950: #0a0a0a;
+
+  --vp-c-brand-1: #000000;
+  --vp-c-brand-2: var(--vetro-800);
+  --vp-c-brand-3: var(--vetro-500);
+  --vp-c-brand-soft: color-mix(in srgb, #000000 10%, transparent);
+
+  --vp-c-brand-light: var(--vetro-800);
+  --vp-c-brand-lighter: var(--vetro-600);
+  --vp-c-brand-dark: var(--vetro-950);
+  --vp-c-brand-darker: #000000;
+
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: linear-gradient(120deg, var(--vetro-800) 20%, var(--vetro-400));
+
+  --vp-home-hero-image-background-image: linear-gradient(
+    -45deg,
+    var(--vetro-700) 35%,
+    var(--vetro-950) 100%
+  );
+  --vp-home-hero-image-filter: blur(48px);
+
+  --vp-custom-block-tip-border: transparent;
+  --vp-custom-block-tip-text: var(--vp-c-brand-1);
+  --vp-custom-block-tip-bg: color-mix(in srgb, var(--vetro-900) 8%, transparent);
+  --vp-custom-block-tip-code-bg: color-mix(in srgb, var(--vetro-900) 12%, transparent);
+
+  --vp-font-family-base:
+    'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+}
+
+.dark {
+  --vp-c-brand-1: var(--vetro-200);
+  --vp-c-brand-2: var(--vetro-300);
+  --vp-c-brand-3: var(--vetro-400);
+  --vp-c-brand-soft: color-mix(in srgb, var(--vetro-200) 14%, transparent);
+
+  --vp-home-hero-name-background: linear-gradient(120deg, var(--vetro-200) 25%, var(--vetro-50));
+  --vp-home-hero-image-background-image: linear-gradient(
+    -45deg,
+    var(--vetro-500) 40%,
+    var(--vetro-950) 100%
+  );
+}
+
+.VPHero .name,
+.VPHero .text {
+  letter-spacing: -0.02em;
+}
+
+.VPHero .tagline {
+  max-width: 48ch;
+}
+
+.VPHero .image-bg {
+  border-radius: 999px;
+}
+
+.VPFeatures .items .item .VPFeature {
+  transition:
+    border-color 200ms ease,
+    transform 200ms ease,
+    box-shadow 200ms ease;
+}
+.VPFeatures .items .item .VPFeature:hover {
+  border-color: var(--vp-c-brand-1);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px -12px color-mix(in srgb, var(--vetro-950) 35%, transparent);
+}
+.VPFeatures .items .item .VPFeature .icon {
+  background-color: color-mix(in srgb, var(--vetro-900) 8%, transparent);
+  border: 1px solid color-mix(in srgb, var(--vetro-900) 18%, transparent);
+  border-radius: 10px;
+}
+
+.VPNavBarMenuLink.active,
+.VPNavBarMenuLink:hover {
+  color: var(--vp-c-brand-1);
+}
+
+.VPSidebarItem.is-active > .item > .indicator {
+  background-color: var(--vp-c-brand-1);
+}
+
+.vp-doc h1 {
+  letter-spacing: -0.02em;
+}
+.vp-doc h2 {
+  border-top-color: color-mix(in srgb, var(--vp-c-divider) 100%, transparent);
+  padding-top: 20px;
+  margin-top: 40px;
+}
+
+.vp-doc :not(pre) > code {
+  background-color: color-mix(in srgb, var(--vetro-900) 8%, transparent);
+  color: var(--vp-c-brand-1);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+.dark .vp-doc :not(pre) > code {
+  background-color: color-mix(in srgb, var(--vetro-200) 12%, transparent);
+  color: var(--vp-c-brand-2);
+}
+
+.vp-doc th {
+  background-color: color-mix(in srgb, var(--vetro-900) 6%, transparent);
+  font-weight: 600;
+}
+.vp-doc tr:nth-child(even) td {
+  background-color: color-mix(in srgb, var(--vp-c-bg-alt) 50%, transparent);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: color-mix(in srgb, var(--vetro-700) 45%, transparent);
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--vetro-700);
+}
