@@ -1,7 +1,7 @@
 {
   "name": "vetro",
   "version": "0.14.0",
-  "description": "Vetro UI \u2014 Vue 3 + TypeScript neo-brutalist component library (lib + web components), a Vue port of RetroUI",
+  "description": "Vetro UI — Vue 3 + TypeScript neo-brutalist component library (lib + web components), a Vue port of RetroUI",
   "files": [
     "dist"
   ],
@@ -67,9 +67,11 @@
   "dependencies": {
     "@popperjs/core": "^2.11.8",
     "@vueuse/core": "^14.3.0",
+    "dayjs": "^1.11.21",
     "echarts": "^5.6.0",
     "embla-carousel": "^8.6.0",
     "embla-carousel-vue": "^8.6.0",
+    "v-calendar": "npm:@angelblanco/v-calendar@3.1.3",
     "vue": "^3.5.34",
     "vue-echarts": "^7.0.3",
     "vue-sonner": "^2.0.9"
