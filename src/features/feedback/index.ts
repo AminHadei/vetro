@@ -32,5 +32,16 @@ export { default as DrawerDescription } from './components/Drawer/DrawerDescript
 export { default as DrawerFooter } from './components/Drawer/DrawerFooter.vue';
 export { default as DrawerClose } from './components/Drawer/DrawerClose.vue';
 export type { DrawerDirection } from './components/Drawer/drawer.context';
+export { default as Modal } from './components/Modal/Modal.vue';
+export { default as ModalLayoutDefault } from './components/Modal/layouts/ModalLayoutDefault.vue';
+export { default as ModalLayoutFullscreen } from './components/Modal/layouts/ModalLayoutFullscreen.vue';
+export { useModalContext } from './components/Modal/Modal.context';
+export { createTypedModal } from './components/Modal/Modal.factory';
+export type {
+  ModalProps,
+  ModalClasses,
+  ModalLayoutName,
+  ModalClassValue,
+} from './components/Modal/Modal.types';
 export { default as Toaster } from './components/Toaster/Toaster.vue';
 export { toast } from 'vue-sonner';
