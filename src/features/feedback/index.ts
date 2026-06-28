@@ -23,6 +23,7 @@ export { default as DialogBody } from './components/Dialog/DialogBody.vue';
 export { default as DialogFooter } from './components/Dialog/DialogFooter.vue';
 export { default as DialogClose } from './components/Dialog/DialogClose.vue';
 export type { DialogSize } from './components/Dialog/dialog.types';
+export { default as BaseDialog } from './components/BaseDialog/BaseDialog.vue';
 export { default as Drawer } from './components/Drawer/Drawer.vue';
 export { default as DrawerTrigger } from './components/Drawer/DrawerTrigger.vue';
 export { default as DrawerContent } from './components/Drawer/DrawerContent.vue';
