@@ -1,0 +1,21 @@
+import type { Meta, StoryObj } from '@storybook/vue3-vite';
+
+import { DateInput } from '@/features/forms';
+
+const meta = {
+  title: 'Forms/DateInput',
+  component: DateInput,
+  tags: ['autodocs'],
+} satisfies Meta<typeof DateInput>;
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Default: Story = {
+  args: {
+    modelValue: null,
+    label: 'Start date',
+    placeholder: 'Select date',
+    required: true,
+  },
+};

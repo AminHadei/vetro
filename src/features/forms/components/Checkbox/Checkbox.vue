@@ -47,7 +47,7 @@
 
 <template>
   <label
-    class=":uno: inline-flex cursor-pointer items-center"
+    class=":uno: inline-flex cursor-pointer items-center gap-2"
     :class="{ ':uno: cursor-not-allowed opacity-50': disabled }"
   >
     <input
@@ -61,6 +61,12 @@
         v-show="model"
         class=":uno: i-check size-full"
       />
+    </span>
+    <span
+      v-if="$slots['default']"
+      class=":uno: text-foreground text-sm"
+    >
+      <slot />
     </span>
   </label>
 </template>
