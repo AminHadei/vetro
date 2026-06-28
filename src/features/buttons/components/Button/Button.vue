@@ -32,7 +32,7 @@
         default:
           ':uno: border-2 border-border bg-primary text-primary-foreground shadow-md hover:translate-y-1 hover:bg-primary-hover hover:shadow active:translate-x-1 active:translate-y-2 active:shadow-none',
         secondary:
-          ':uno: border-2 border-border bg-secondary text-secondary-foreground shadow-md hover:translate-y-1 hover:bg-secondary-hover hover:shadow active:translate-x-1 active:translate-y-2 active:shadow-none',
+          ':uno: border-2 border-border bg-secondary text-secondary-foreground shadow-md hover:translate-y-1 hover:bg-secondary-hover hover:text-secondary-hover-foreground hover:shadow active:translate-x-1 active:translate-y-2 active:shadow-none',
         outline:
           ':uno: border-2 border-border bg-transparent shadow-md hover:translate-y-1 hover:shadow active:translate-x-1 active:translate-y-2 active:shadow-none',
         link: ':uno: bg-transparent hover:underline',

@@ -15,6 +15,7 @@ import { themePreflight } from './tools/uno/theme';
 const __dirname = import.meta.dirname;
 
 const config = {
+  safelist: ['i-calendar', 'i-calendar size-4'],
   presets: [
     presetWind4({
       preflights: {
@@ -69,6 +70,7 @@ const config = {
       secondary: 'var(--secondary)',
       'secondary-hover': 'var(--secondary-hover)',
       'secondary-foreground': 'var(--secondary-foreground)',
+      'secondary-hover-foreground': 'var(--secondary-hover-foreground)',
       muted: 'var(--muted)',
       'muted-foreground': 'var(--muted-foreground)',
       accent: 'var(--accent)',
@@ -78,6 +80,8 @@ const config = {
       border: 'var(--border)',
       input: 'var(--input)',
       ring: 'var(--ring)',
+      'badge-default-bg': 'var(--badge-default-bg)',
+      'badge-default-text': 'var(--badge-default-text)',
     },
     font: {
       head: ['Archivo Black', 'ui-sans-serif', 'sans-serif'],

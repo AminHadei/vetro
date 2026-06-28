@@ -21,6 +21,7 @@ export const themePreflight = `
   --secondary: #000000;
   --secondary-hover: #1a1a1a;
   --secondary-foreground: #ffffff;
+  --secondary-hover-foreground: #ffffff;
   --muted: #d5d5d5;
   --muted-foreground: #5a5a5a;
   --accent: #fae583;
@@ -35,6 +36,8 @@ export const themePreflight = `
   --chart-3: #e7f192;
   --chart-4: #000000;
   --chart-5: #ff30cd;
+  --badge-default-bg: #d5d5d5;
+  --badge-default-text: #5a5a5a;
 }
 
 .dark {
@@ -50,6 +53,7 @@ export const themePreflight = `
   --secondary: #3a3a3a;
   --secondary-hover: #4a4a4a;
   --secondary-foreground: #f5f5f5;
+  --secondary-hover-foreground: #f5f5f5;
   --muted: #3f3f46;
   --muted-foreground: #a0a0a0;
   --accent: #fae583;
@@ -174,7 +178,9 @@ export const themePreflight = `
   --primary-hover: #d00000;
   --primary-foreground: #ffffff;
   --secondary: #ffda5c;
+  --secondary-hover: #1a1a1a;
   --secondary-foreground: #000000;
+  --secondary-hover-foreground: #ffffff;
   --accent: #ceebfc;
   --accent-foreground: #000000;
   --destructive: #d00000;
@@ -197,7 +203,9 @@ export const themePreflight = `
   --primary-hover: #d00000;
   --primary-foreground: #ffffff;
   --secondary: #ffda5c;
+  --secondary-hover: #1a1a1a;
   --secondary-foreground: #000000;
+  --secondary-hover-foreground: #ffffff;
   --accent: #2a3b45;
   --accent-foreground: #ceebfc;
   --destructive: #d00000;

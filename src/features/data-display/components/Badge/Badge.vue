@@ -18,7 +18,7 @@
     base: ':uno: inline-flex items-center rounded font-semibold',
     variants: {
       variant: {
-        default: ':uno: bg-muted text-muted-foreground',
+        default: ':uno: bg-badge-default-bg text-badge-default-text',
         outline: ':uno: outline outline-2 outline-foreground text-foreground',
         solid: ':uno: bg-foreground text-background',
         surface: ':uno: outline outline-2 outline-border bg-primary text-primary-foreground',
