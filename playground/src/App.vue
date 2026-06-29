@@ -1,7 +1,10 @@
 <script setup lang="ts">
-  import { ref } from 'vue';
+  import { ref, useTemplateRef, watch } from 'vue';
 
-  import { Button, IconButton } from '@/features/buttons';
+  import BrandedHeroLayout from './modal-layouts/BrandedHeroLayout.vue';
+import ConfirmLayout from './modal-layouts/ConfirmLayout.vue';
+import DrawerLayout from './modal-layouts/DrawerLayout.vue';
+import { Button, IconButton, PrimaryButton } from '@/features/buttons';
 import { AreaChart, BarChart, LineChart, PieChart } from '@/features/charts';
 import {
   Command,
@@ -19,6 +22,7 @@ import {
   AvatarFallback,
   AvatarImage,
   Badge,
+  BaseBadge,
   Card,
   CardContent,
   CardDescription,
@@ -39,11 +43,13 @@ import {
   TableHeader,
   TableRow,
   Text,
+  Countdown,
 } from '@/features/data-display';
 import {
   Alert,
   AlertDescription,
   AlertTitle,
+  BaseDialog,
   Dialog,
   DialogBody,
   DialogContent,
@@ -60,6 +66,8 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
+  Modal,
+  createTypedModal,
   Popover,
   PopoverContent,
   PopoverDescription,
@@ -73,14 +81,19 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@/features/feedback';
+import type { ModalClasses } from '@/features/feedback';
 import {
   Calendar,
   Checkbox,
+  CheckInput,
+  DateInput,
+  DatePicker,
   Field,
   FieldDescription,
   FieldError,
   FieldLabel,
   Input,
+  InputNumber,
   Label,
   RadioGroup,
   RadioGroupItem,
@@ -98,7 +111,11 @@ import {
   Toggle,
   ToggleGroup,
   ToggleGroupItem,
+  BaseDropdown,
+  CountryDropdown,
+  PhoneNumberInput,
 } from '@/features/forms';
+import type { BaseDropdownItem } from '@/features/forms';
 import {
   Carousel,
   CarouselContent,
@@ -141,9 +158,30 @@ import {
   const theme = ref<'' | 'theme-purple' | 'theme-lime' | 'theme-red' | 'theme-green'>('');
   const dark = ref(false);
 
+  const themeClassNames = ['theme-purple', 'theme-lime', 'theme-red', 'theme-green'] as const;
+
+  watch(
+    [theme, dark],
+    () => {
+      const root = document.documentElement;
+      for (const className of themeClassNames) {
+        root.classList.remove(className);
+      }
+      root.classList.remove('dark');
+      if (theme.value !== '') {
+        root.classList.add(theme.value);
+      }
+      if (dark.value) {
+        root.classList.add('dark');
+      }
+    },
+    { immediate: true },
+  );
+
   const clicks = ref(0);
   const progress = ref(60);
   const dialogOpen = ref(false);
+  const baseDialogOpen = ref(false);
   const drawerOpen = ref(false);
   const fruit = ref('');
   const date = ref<Date | undefined>(new Date());
@@ -151,11 +189,45 @@ import {
   const inputValue = ref('');
   const textareaValue = ref('');
   const checked = ref(false);
+  const checkInputChecked = ref(false);
   const switched = ref(false);
   const sliderValue = ref(50);
   const radioValue = ref('a');
   const toggleOn = ref(false);
   const toggleGroup = ref<string[]>([]);
+  const ConfirmModal = createTypedModal(ConfirmLayout);
+  const defaultModalRef = useTemplateRef('defaultModal');
+  const fullscreenOpen = ref(false);
+  const bottomSheetOpen = ref(false);
+  const persistentOpen = ref(false);
+  const persistentTriedToClose = ref(0);
+  const themedOpen = ref(false);
+  const stackedOuter = ref(false);
+  const stackedInner = ref(false);
+  const heroOpen = ref(false);
+  const modalDrawerOpen = ref(false);
+  const confirmOpen = ref(false);
+  const lastConfirmAction = ref('');
+
+  const themedClasses: ModalClasses = {
+    backdrop: 'bg-black/60 backdrop-blur-md',
+    body: 'border-border border-2 bg-card',
+    header: 'bg-muted',
+  };
+
+  const datePickerValue = ref<Date | undefined>();
+  const dateInputValue = ref<Date | null>(null);
+  const inputNumberValue = ref<string | null>(null);
+  const dropdownItem = ref<BaseDropdownItem | null>(null);
+  const countryCode = ref<string | null>('us');
+  const phoneNumber = ref('');
+  const countdownStart = new Date(Date.now() + 5 * 24 * 60 * 60 * 1000).toISOString();
+
+  const dropdownItems: BaseDropdownItem[] = [
+    { id: 1, label: 'Profile' },
+    { id: 2, label: 'Settings' },
+    { id: 3, label: 'Logout' },
+  ];
 
   const chartData = [
     { month: 'Jan', desktop: 186, mobile: 80 },
@@ -182,10 +254,7 @@ import {
 </script>
 
 <template>
-  <div
-    :class="[theme, { dark }]"
-    class="playground-shell"
-  >
+  <div class="playground-shell">
     <main class="playground-main">
       <header class="playground-header">
         <h1>{{ playgroundTitle }}</h1>
@@ -214,7 +283,15 @@ import {
       </section>
 
       <section class="playground-section">
-        <h2>Button</h2>
+        <h2>Button &amp; PrimaryButton</h2>
+        <h3 class="m-0 text-base font-semibold text-neutral-800">PrimaryButton</h3>
+        <div class="playground-row">
+          <PrimaryButton @click="clicks++">Primary</PrimaryButton>
+          <PrimaryButton variant="outline">Outline</PrimaryButton>
+          <PrimaryButton variant="text">Text</PrimaryButton>
+          <PrimaryButton disabled>Disabled</PrimaryButton>
+        </div>
+        <h3 class="m-0 text-base font-semibold text-neutral-800">Button</h3>
         <div class="playground-row">
           <Button @click="clicks++">Default</Button>
           <Button variant="secondary">Secondary</Button>
@@ -248,12 +325,19 @@ import {
       </section>
 
       <section class="playground-section">
-        <h2>Badge</h2>
+        <h2>Badge &amp; BaseBadge</h2>
+        <h3 class="m-0 text-sm font-semibold">Badge</h3>
         <div class="playground-row">
           <Badge>Default</Badge>
           <Badge variant="outline">Outline</Badge>
           <Badge variant="solid">Solid</Badge>
           <Badge variant="surface">Surface</Badge>
+        </div>
+        <h3 class="m-0 text-sm font-semibold">BaseBadge</h3>
+        <div class="playground-row">
+          <BaseBadge>Default</BaseBadge>
+          <BaseBadge color="green">Success</BaseBadge>
+          <BaseBadge color="red">Error</BaseBadge>
         </div>
       </section>
 
@@ -267,7 +351,7 @@ import {
             </CardHeader>
             <CardContent>Any content can live inside the card body.</CardContent>
           </Card>
-          <div class="flex items-center justify-center w-1/2">
+          <div class="px-6">
             <Avatar>
               <AvatarImage
                 src="https://i.pravatar.cc/150?img=12"
@@ -289,7 +373,7 @@ import {
             min="0"
             max="100"
           />
-          <div class="flex items-center justify-between gap-6">
+          <div class="flex items-center justify-between">
             <Loader size="sm" />
             <Loader size="md" />
             <Loader
@@ -322,11 +406,19 @@ import {
             <AlertTitle>Error</AlertTitle>
             <AlertDescription>Something went wrong.</AlertDescription>
           </Alert>
+          <Alert status="success">
+            <AlertTitle>Success</AlertTitle>
+            <AlertDescription>Your changes were saved.</AlertDescription>
+          </Alert>
+          <Alert status="warning">
+            <AlertTitle>Warning</AlertTitle>
+            <AlertDescription>Please review before continuing.</AlertDescription>
+          </Alert>
         </div>
       </section>
 
       <section class="playground-section">
-        <h2>Overlays</h2>
+        <h2>Overlays (Dialog &amp; BaseDialog)</h2>
         <div class="playground-row">
           <Dialog v-model:open="dialogOpen">
             <DialogTrigger>
@@ -350,6 +442,15 @@ import {
               </DialogFooter>
             </DialogContent>
           </Dialog>
+
+          <Button @click="baseDialogOpen = true">BaseDialog</Button>
+          <BaseDialog
+            v-model:visible="baseDialogOpen"
+            header="Base dialog"
+            width="480px"
+          >
+            <p class="m-0">Legacy shared dialog shell — kept alongside Dialog.</p>
+          </BaseDialog>
 
           <Drawer v-model:open="drawerOpen">
             <DrawerTrigger>
@@ -466,7 +567,7 @@ import {
           <ContextMenu>
             <ContextMenuTrigger>
               <div
-                class="border-border flex h-24 w-48 items-center justify-center border-2 border-dashed text-sm"
+                class="flex h-24 w-48 items-center justify-center rounded-lg border border-dashed border-neutral-300 text-sm text-neutral-600"
               >
                 Right-click here
               </div>
@@ -577,7 +678,9 @@ import {
               placeholder="Notes"
             />
           </div>
-          <Checkbox v-model="checked">Accept terms</Checkbox>
+          <h3 class="m-0 text-sm font-semibold">Checkbox &amp; CheckInput</h3>
+          <Checkbox v-model="checked">Accept terms (Checkbox)</Checkbox>
+          <CheckInput v-model="checkInputChecked">Accept terms (CheckInput)</CheckInput>
           <Switch v-model="switched">Notifications</Switch>
           <Slider v-model="sliderValue" />
           <RadioGroup v-model="radioValue">
@@ -679,16 +782,222 @@ import {
       </section>
 
       <section class="playground-section">
+        <h2>Modal</h2>
+        <p class="playground-muted">
+          Built-in layouts, custom layouts via <code>:layout</code>, and
+          <code>createTypedModal</code>.
+        </p>
+
+        <h3 class="m-0 text-sm font-semibold">Built-in layouts</h3>
+        <div class="playground-row">
+          <Button @click="defaultModalRef?.open()">Default (with footer)</Button>
+          <Button @click="fullscreenOpen = true">Fullscreen</Button>
+          <Button @click="bottomSheetOpen = true">Responsive bottom sheet</Button>
+          <Button @click="persistentOpen = true">Persistent (not closable)</Button>
+          <Button @click="themedOpen = true">Themed (custom classes)</Button>
+          <Button @click="stackedOuter = true">Stacked modals</Button>
+        </div>
+
+        <h3 class="m-0 text-sm font-semibold">Custom layouts</h3>
+        <div class="playground-row">
+          <Button @click="heroOpen = true">Branded hero</Button>
+          <Button @click="modalDrawerOpen = true">Right drawer</Button>
+          <Button @click="confirmOpen = true">Confirm dialog (danger)</Button>
+        </div>
+        <p
+          v-if="lastConfirmAction"
+          class="playground-muted"
+        >
+          Last confirm action: <strong>{{ lastConfirmAction }}</strong>
+        </p>
+      </section>
+
+      <section class="playground-section">
         <h2>Calendar</h2>
         <Calendar v-model="date" />
         <p class="playground-muted">Selected: {{ date?.toLocaleDateString() ?? 'none' }}</p>
       </section>
 
       <section class="playground-section">
-        <h2>Toaster</h2>
+        <h2>Date &amp; number inputs</h2>
+        <div class="playground-stack">
+          <div>
+            <Label class="block">DatePicker (v-calendar):</Label>
+            <DatePicker v-model="datePickerValue" />
+            <p class="playground-muted">Selected: {{ datePickerValue?.toLocaleDateString() ?? 'none' }}</p>
+          </div>
+          <div>
+            <Label>DateInput</Label>
+            <DateInput v-model="dateInputValue" />
+            <p class="playground-muted">Value: {{ dateInputValue?.toLocaleDateString() ?? 'none' }}</p>
+          </div>
+          <div>
+            <Label>InputNumber</Label>
+            <InputNumber v-model="inputNumberValue" />
+            <p class="playground-muted">Value: {{ inputNumberValue }}</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="playground-section">
+        <h2>BaseDropdown &amp; phone</h2>
+        <div class="playground-stack">
+          <BaseDropdown
+            v-model="dropdownItem"
+            :items="dropdownItems"
+          >
+            <Button>{{ dropdownItem?.label ?? 'Pick an action' }}</Button>
+          </BaseDropdown>
+          <CountryDropdown v-model="countryCode">
+            <Button variant="outline">Country: {{ countryCode ?? 'none' }}</Button>
+          </CountryDropdown>
+          <PhoneNumberInput
+            v-model="phoneNumber"
+            :country-code="countryCode"
+            label="Phone"
+          />
+          <p class="playground-muted">Phone: {{ phoneNumber || 'none' }}</p>
+        </div>
+      </section>
+
+      <section class="playground-section">
+        <h2>Countdown</h2>
+        <Countdown :start-date="countdownStart" />
+      </section>
+
+      <section class="playground-section">
+        <h2>Toaster &amp; Toast</h2>
         <Button @click="notify">Show toast</Button>
       </section>
     </main>
+
+    <Modal
+      ref="defaultModal"
+      title="Confirm action"
+    >
+      <p class="m-0">Are you sure you want to proceed?</p>
+      <template #footer>
+        <div class="flex justify-end gap-2">
+          <Button
+            variant="outline"
+            @click="defaultModalRef?.close()"
+          >
+            Cancel
+          </Button>
+          <Button @click="defaultModalRef?.close()">Confirm</Button>
+        </div>
+      </template>
+    </Modal>
+
+    <Modal
+      v-model:visible="fullscreenOpen"
+      layout="fullscreen"
+      title="Fullscreen Modal"
+    >
+      <p>Edge-to-edge layout for immersive content like onboarding flows.</p>
+    </Modal>
+
+    <Modal
+      v-model:visible="bottomSheetOpen"
+      title="Adaptive Modal"
+      :modal-only="false"
+    >
+      <p>
+        Resize below 768px — this slides up from the bottom as a mobile-friendly sheet. Above the
+        breakpoint it renders as a centered modal.
+      </p>
+    </Modal>
+
+    <Modal
+      v-model:visible="persistentOpen"
+      title="Persistent"
+      :closable="false"
+      @tried-close="persistentTriedToClose += 1"
+    >
+      <p>Backdrop click and Escape are intercepted — the parent is notified instead of closing.</p>
+      <p class="playground-muted">Tried to close: {{ persistentTriedToClose }} time(s)</p>
+      <Button
+        class="mt-4"
+        @click="persistentOpen = false"
+      >
+        Close programmatically
+      </Button>
+    </Modal>
+
+    <Modal
+      v-model:visible="themedOpen"
+      title="Themed"
+      :classes="themedClasses"
+    >
+      <p>
+        Every zone — backdrop, wrapper, body, header, content, footer, close button — accepts class
+        overrides via the <code>classes</code> prop.
+      </p>
+    </Modal>
+
+    <Modal
+      v-model:visible="stackedOuter"
+      title="Outer Modal"
+    >
+      <p>Open another modal on top.</p>
+      <template #footer>
+        <Button @click="stackedInner = true">Open inner</Button>
+      </template>
+    </Modal>
+    <Modal
+      v-model:visible="stackedInner"
+      title="Inner Modal"
+    >
+      <p>Escape only closes the topmost modal. Body scroll lock is ref-counted.</p>
+    </Modal>
+
+    <Modal
+      v-model:visible="heroOpen"
+      title="Welcome aboard"
+      :layout="BrandedHeroLayout"
+    >
+      A custom layout receives the modal context and renders whatever it wants — no structural
+      assumptions from the shell.
+    </Modal>
+
+    <Modal
+      v-model:visible="modalDrawerOpen"
+      title="Settings"
+      :layout="DrawerLayout"
+    >
+      <div class="space-y-4">
+        <div>
+          <label class="text-sm font-medium">Display name</label>
+          <input
+            type="text"
+            class="border-border mt-1 w-full border-2 px-3 py-2"
+            placeholder="Jane Doe"
+          />
+        </div>
+        <div>
+          <label class="text-sm font-medium">Email</label>
+          <input
+            type="email"
+            class="border-border mt-1 w-full border-2 px-3 py-2"
+            placeholder="jane@example.com"
+          />
+        </div>
+      </div>
+    </Modal>
+
+    <ConfirmModal
+      v-model:visible="confirmOpen"
+      title="Delete this project?"
+      tone="danger"
+      confirm-label="Delete"
+      cancel-label="Keep it"
+      @confirm="lastConfirmAction = 'Deleted'"
+      @cancel="lastConfirmAction = 'Cancelled'"
+    >
+      This action cannot be undone. All associated data will be permanently removed from our
+      servers.
+    </ConfirmModal>
+
     <Toaster />
   </div>
 </template>
