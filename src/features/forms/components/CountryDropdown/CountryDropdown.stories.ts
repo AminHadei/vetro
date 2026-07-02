@@ -4,8 +4,8 @@ import { ref } from 'vue';
 
 import { Button } from '@/features/buttons';
 
-import CountryDropdown from './CountryDropdown.vue';
 import type { Iso2 } from '../PhoneNumberInput/data';
+import CountryDropdown from './CountryDropdown.vue';
 
 const meta = {
   title: 'Forms/CountryDropdown',

@@ -160,7 +160,7 @@
       >
         <div
           :class="[
-            ':uno: max-h-90vh border-border flex flex-col overflow-hidden rounded border-2 bg-background shadow-lg',
+            ':uno: max-h-90vh border-border bg-background flex flex-col overflow-hidden rounded border-2 shadow-lg',
             contentClass,
           ]"
           v-bind="attrs"

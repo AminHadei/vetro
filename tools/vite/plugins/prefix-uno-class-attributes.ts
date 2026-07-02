@@ -31,13 +31,16 @@ export const prefixClassValue = (value: string): string => {
 };
 
 const prefixQuotedUtilityLiterals = (code: string): string =>
-  code.replaceAll(/(['"`])((?:\\.|(?!\1)[\s\S])*?)\1/gu, (match, quote: string, content: string) => {
-    if (quote === '`' && content.includes('${')) {
-      return match;
-    }
-    const prefixed = prefixClassValue(content);
-    return prefixed === content ? match : `${quote}${prefixed}${quote}`;
-  });
+  code.replaceAll(
+    /(['"`])((?:\\.|(?!\1)[\s\S])*?)\1/gu,
+    (match, quote: string, content: string) => {
+      if (quote === '`' && content.includes('${')) {
+        return match;
+      }
+      const prefixed = prefixClassValue(content);
+      return prefixed === content ? match : `${quote}${prefixed}${quote}`;
+    },
+  );
 
 /** Prepends `:uno:` to utility strings so production CSS compiles to hashed selectors. */
 export const prefixUnoClassAttributes = (): Plugin => ({

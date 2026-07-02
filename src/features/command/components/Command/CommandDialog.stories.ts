@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/vue3-vite';
 import { ref } from 'vue';
 
+import { Button } from '@/features/buttons';
 import {
   Command,
   CommandDialog,
@@ -10,7 +11,6 @@ import {
   CommandItem,
   CommandList,
 } from '@/features/command';
-import { Button } from '@/features/buttons';
 
 const meta = {
   title: 'Command/CommandDialog',

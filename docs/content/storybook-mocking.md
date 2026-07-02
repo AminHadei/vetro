@@ -17,7 +17,9 @@ Register feature handlers in `src/mocks/node.ts` when you add API-backed compone
 ```ts
 import { setupServer } from 'msw/node';
 
-const handlers = [/* ... */];
+const handlers = [
+  /* ... */
+];
 export const server = setupServer(...handlers);
 ```
 

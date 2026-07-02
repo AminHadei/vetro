@@ -107,21 +107,15 @@ const fixTemplateSection = (template: string): string => {
     (_match: string, lead: string, cls: string) => `${lead}class="${prefixUtility(cls)}"`,
   );
 
-  next = next.replaceAll(
-    /\?\s*'([^']*)'/g,
-    (match: string, value: string) => {
-      const prefixed = prefixUtility(value);
-      return prefixed === value ? match : `? '${prefixed}'`;
-    },
-  );
+  next = next.replaceAll(/\?\s*'([^']*)'/g, (match: string, value: string) => {
+    const prefixed = prefixUtility(value);
+    return prefixed === value ? match : `? '${prefixed}'`;
+  });
 
-  next = next.replaceAll(
-    /:\s*'([^']*)'/g,
-    (match: string, value: string) => {
-      const prefixed = prefixUtility(value);
-      return prefixed === value ? match : `: '${prefixed}'`;
-    },
-  );
+  next = next.replaceAll(/:\s*'([^']*)'/g, (match: string, value: string) => {
+    const prefixed = prefixUtility(value);
+    return prefixed === value ? match : `: '${prefixed}'`;
+  });
 
   next = next.replaceAll(/\{\s*'([^']+)':/g, (match: string, value: string) => {
     const prefixed = prefixUtility(value);

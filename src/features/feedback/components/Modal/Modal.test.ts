@@ -147,9 +147,7 @@ describe('Modal', () => {
       });
       await nextTick();
 
-      const backdrop = document.querySelector(
-        '[data-vetro-modal-backdrop]',
-      ) as HTMLElement | null;
+      const backdrop = document.querySelector('[data-vetro-modal-backdrop]') as HTMLElement | null;
       backdrop?.click();
       await nextTick();
 
@@ -208,9 +206,7 @@ describe('Modal', () => {
       });
       await nextTick();
 
-      const backdrop = document.querySelector(
-        '[data-vetro-modal-backdrop]',
-      ) as HTMLElement | null;
+      const backdrop = document.querySelector('[data-vetro-modal-backdrop]') as HTMLElement | null;
       backdrop?.click();
       await flushTransitions();
 
@@ -225,9 +221,7 @@ describe('Modal', () => {
       });
       await nextTick();
 
-      const backdrop = document.querySelector(
-        '[data-vetro-modal-backdrop]',
-      ) as HTMLElement | null;
+      const backdrop = document.querySelector('[data-vetro-modal-backdrop]') as HTMLElement | null;
       backdrop?.click();
       await nextTick();
       expect(onUpdate).not.toHaveBeenCalled();

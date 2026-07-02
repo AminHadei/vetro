@@ -33,7 +33,7 @@
       role="dialog"
       aria-modal="true"
       :class="[
-        ':uno: font-head fixed inset-0 flex flex-col border-2 border-border bg-background',
+        ':uno: font-head border-border bg-background fixed inset-0 flex flex-col border-2',
         classes.wrapper,
       ]"
       :style="wrapperStyles"
@@ -42,13 +42,13 @@
         v-if="hasHeader"
         data-vetro-modal-header
         :class="[
-          ':uno: flex shrink-0 items-start justify-between border-b-2 border-border px-6 pt-5 pb-4',
+          ':uno: border-border flex shrink-0 items-start justify-between border-b-2 px-6 pt-5 pb-4',
           classes.header,
         ]"
       >
         <div class=":uno: flex-1">
           <slot name="header">
-            <h3 class=":uno: m-0 text-xl font-semibold text-foreground">
+            <h3 class=":uno: text-foreground m-0 text-xl font-semibold">
               {{ title }}
             </h3>
           </slot>
@@ -61,7 +61,7 @@
         data-vetro-modal-close
         aria-label="Close"
         :class="[
-          ':uno: absolute top-5 right-5 cursor-pointer border-2 border-border bg-background px-2 py-1 text-lg leading-none',
+          ':uno: border-border bg-background absolute top-5 right-5 cursor-pointer border-2 px-2 py-1 text-lg leading-none',
           classes.closeButton,
         ]"
         @click="requestClose"
@@ -82,7 +82,7 @@
 
       <div
         v-if="hasFooter"
-        :class="[':uno: shrink-0 border-t-2 border-border px-6 pt-4 pb-5', classes.footer]"
+        :class="[':uno: border-border shrink-0 border-t-2 px-6 pt-4 pb-5', classes.footer]"
       >
         <slot name="footer" />
       </div>

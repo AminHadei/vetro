@@ -6,9 +6,9 @@
   import { usePopper } from '@/features/shared/lib/composables/use-popper';
   import { useTeleportTarget } from '@/features/shared/lib/composables/use-teleport-target';
 
+  import { selectContextKey } from './select.context';
   import SelectScrollDownButton from './SelectScrollDownButton.vue';
   import SelectScrollUpButton from './SelectScrollUpButton.vue';
-  import { selectContextKey } from './select.context';
 
   defineOptions({
     name: 'VetroSelectContent',

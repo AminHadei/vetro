@@ -1,155 +1,156 @@
 <script setup lang="ts">
   import { ref, useTemplateRef, watch } from 'vue';
 
+  import { Button, IconButton, PrimaryButton } from '@/features/buttons';
+  import { AreaChart, BarChart, LineChart, PieChart } from '@/features/charts';
+  import {
+    Command,
+    CommandDialog,
+    CommandDisplay,
+    CommandEmpty,
+    CommandGroup,
+    CommandInput,
+    CommandItem,
+    CommandList,
+    CommandShortcut,
+  } from '@/features/command';
+  import {
+    Avatar,
+    AvatarFallback,
+    AvatarImage,
+    Badge,
+    BaseBadge,
+    Card,
+    CardContent,
+    CardDescription,
+    CardHeader,
+    CardTitle,
+    Empty,
+    EmptyContent,
+    EmptyDescription,
+    EmptyIcon,
+    EmptyTitle,
+    Loader,
+    Progress,
+    Table,
+    TableBody,
+    TableCaption,
+    TableCell,
+    TableHead,
+    TableHeader,
+    TableRow,
+    Text,
+    Countdown,
+  } from '@/features/data-display';
+  import {
+    Alert,
+    AlertDescription,
+    AlertTitle,
+    BaseDialog,
+    Dialog,
+    DialogBody,
+    DialogContent,
+    DialogDescription,
+    DialogFooter,
+    DialogHeader,
+    DialogTitle,
+    DialogTrigger,
+    Drawer,
+    DrawerClose,
+    DrawerContent,
+    DrawerDescription,
+    DrawerFooter,
+    DrawerHeader,
+    DrawerTitle,
+    DrawerTrigger,
+    Modal,
+    createTypedModal,
+    Popover,
+    PopoverContent,
+    PopoverDescription,
+    PopoverHeader,
+    PopoverTitle,
+    PopoverTrigger,
+    Toaster,
+    toast,
+    Tooltip,
+    TooltipContent,
+    TooltipProvider,
+    TooltipTrigger,
+  } from '@/features/feedback';
+  import type { ModalClasses } from '@/features/feedback';
+  import {
+    Calendar,
+    Checkbox,
+    CheckInput,
+    DateInput,
+    DatePicker,
+    Field,
+    FieldDescription,
+    FieldError,
+    FieldLabel,
+    Input,
+    InputNumber,
+    Label,
+    RadioGroup,
+    RadioGroupItem,
+    Select,
+    SelectContent,
+    SelectGroup,
+    SelectItem,
+    SelectLabel,
+    SelectSeparator,
+    SelectTrigger,
+    SelectValue,
+    Slider,
+    Switch,
+    Textarea,
+    Toggle,
+    ToggleGroup,
+    ToggleGroupItem,
+    BaseDropdown,
+    CountryDropdown,
+    PhoneNumberInput,
+  } from '@/features/forms';
+  import type { BaseDropdownItem } from '@/features/forms';
+  import {
+    Carousel,
+    CarouselContent,
+    CarouselItem,
+    CarouselNext,
+    CarouselPrevious,
+  } from '@/features/media';
+  import {
+    Accordion,
+    AccordionContent,
+    AccordionHeader,
+    AccordionItem,
+    Breadcrumb,
+    BreadcrumbItem,
+    BreadcrumbLink,
+    BreadcrumbList,
+    BreadcrumbPage,
+    BreadcrumbSeparator,
+    ContextMenu,
+    ContextMenuContent,
+    ContextMenuItem,
+    ContextMenuLabel,
+    ContextMenuSeparator,
+    ContextMenuTrigger,
+    Menu,
+    MenuContent,
+    MenuItem,
+    MenuTrigger,
+    Tabs,
+    TabsContent,
+    TabsList,
+    TabsTrigger,
+    TableOfContents,
+  } from '@/features/navigation';
+
   import BrandedHeroLayout from './modal-layouts/BrandedHeroLayout.vue';
-import ConfirmLayout from './modal-layouts/ConfirmLayout.vue';
-import DrawerLayout from './modal-layouts/DrawerLayout.vue';
-import { Button, IconButton, PrimaryButton } from '@/features/buttons';
-import { AreaChart, BarChart, LineChart, PieChart } from '@/features/charts';
-import {
-  Command,
-  CommandDialog,
-  CommandDisplay,
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-  CommandList,
-  CommandShortcut,
-} from '@/features/command';
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-  Badge,
-  BaseBadge,
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-  Empty,
-  EmptyContent,
-  EmptyDescription,
-  EmptyIcon,
-  EmptyTitle,
-  Loader,
-  Progress,
-  Table,
-  TableBody,
-  TableCaption,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-  Text,
-  Countdown,
-} from '@/features/data-display';
-import {
-  Alert,
-  AlertDescription,
-  AlertTitle,
-  BaseDialog,
-  Dialog,
-  DialogBody,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-  Drawer,
-  DrawerClose,
-  DrawerContent,
-  DrawerDescription,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerTitle,
-  DrawerTrigger,
-  Modal,
-  createTypedModal,
-  Popover,
-  PopoverContent,
-  PopoverDescription,
-  PopoverHeader,
-  PopoverTitle,
-  PopoverTrigger,
-  Toaster,
-  toast,
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from '@/features/feedback';
-import type { ModalClasses } from '@/features/feedback';
-import {
-  Calendar,
-  Checkbox,
-  CheckInput,
-  DateInput,
-  DatePicker,
-  Field,
-  FieldDescription,
-  FieldError,
-  FieldLabel,
-  Input,
-  InputNumber,
-  Label,
-  RadioGroup,
-  RadioGroupItem,
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectSeparator,
-  SelectTrigger,
-  SelectValue,
-  Slider,
-  Switch,
-  Textarea,
-  Toggle,
-  ToggleGroup,
-  ToggleGroupItem,
-  BaseDropdown,
-  CountryDropdown,
-  PhoneNumberInput,
-} from '@/features/forms';
-import type { BaseDropdownItem } from '@/features/forms';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from '@/features/media';
-import {
-  Accordion,
-  AccordionContent,
-  AccordionHeader,
-  AccordionItem,
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-  ContextMenu,
-  ContextMenuContent,
-  ContextMenuItem,
-  ContextMenuLabel,
-  ContextMenuSeparator,
-  ContextMenuTrigger,
-  Menu,
-  MenuContent,
-  MenuItem,
-  MenuTrigger,
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-  TableOfContents,
-} from '@/features/navigation';
+  import ConfirmLayout from './modal-layouts/ConfirmLayout.vue';
+  import DrawerLayout from './modal-layouts/DrawerLayout.vue';
 
   const { playgroundTitle = 'Vetro UI — Playground' } = defineProps<{
     playgroundTitle?: string;
@@ -824,12 +825,16 @@ import {
           <div>
             <Label class="block">DatePicker (v-calendar):</Label>
             <DatePicker v-model="datePickerValue" />
-            <p class="playground-muted">Selected: {{ datePickerValue?.toLocaleDateString() ?? 'none' }}</p>
+            <p class="playground-muted">
+              Selected: {{ datePickerValue?.toLocaleDateString() ?? 'none' }}
+            </p>
           </div>
           <div>
             <Label>DateInput</Label>
             <DateInput v-model="dateInputValue" />
-            <p class="playground-muted">Value: {{ dateInputValue?.toLocaleDateString() ?? 'none' }}</p>
+            <p class="playground-muted">
+              Value: {{ dateInputValue?.toLocaleDateString() ?? 'none' }}
+            </p>
           </div>
           <div>
             <Label>InputNumber</Label>

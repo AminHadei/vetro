@@ -45,9 +45,7 @@
       outline: [
         ':uno: bg-transparent text-foreground hover:translate-y-0.5 hover:shadow active:translate-x-0.5 active:translate-y-1 active:shadow-none',
       ],
-      text: [
-        ':uno: border-transparent bg-transparent text-foreground shadow-none hover:underline',
-      ],
+      text: [':uno: border-transparent bg-transparent text-foreground shadow-none hover:underline'],
     };
 
     const disabledVariant = {

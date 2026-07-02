@@ -85,18 +85,18 @@
 
 <template>
   <div
-    class=":uno: inline-flex items-center rounded border-2 border-border bg-background px-3 py-2 shadow-md"
+    class=":uno: border-border bg-background inline-flex items-center rounded border-2 px-3 py-2 shadow-md"
     data-slot="countdown"
   >
     <span
       v-if="showIcon && usesDefaultIcon"
-      class="i-calendar size-4 shrink-0 text-muted-foreground"
+      class="i-calendar text-muted-foreground size-4 shrink-0"
       aria-hidden="true"
     />
     <span
       v-else-if="showIcon"
       :class="iconClass"
-      class="shrink-0 text-muted-foreground"
+      class="text-muted-foreground shrink-0"
       aria-hidden="true"
     />
     <span :class="[textClass, showIcon ? 'ml-2' : '']">

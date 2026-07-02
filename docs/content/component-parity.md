@@ -6,28 +6,28 @@ Mirror of the parity tracker in Noirium. **Strategy: keep both** for overlapping
 
 ## Vetro-specific ports (from Noirium)
 
-| Component | Target feature | Phase | Status |
-| --------- | -------------- | ----- | ------ |
-| `Countdown` | `data-display` | 1 | done |
-| `DateInput` | `forms` | 1 | done |
-| `InputNumber` | `forms` | 1 | done |
-| `Modal` (+ layouts, `createTypedModal`) | `feedback` | 2 | done |
-| `DatePicker` | `forms` | 2 | done |
-| `BaseDropdown` | `forms` | 2 | done |
-| `PhoneNumberInput` | `forms` | 3 | done |
-| `CountryDropdown` | `forms` | 3 | done |
-| Toast stack | `feedback` | overlap | keep `Toaster` |
+| Component                               | Target feature | Phase   | Status         |
+| --------------------------------------- | -------------- | ------- | -------------- |
+| `Countdown`                             | `data-display` | 1       | done           |
+| `DateInput`                             | `forms`        | 1       | done           |
+| `InputNumber`                           | `forms`        | 1       | done           |
+| `Modal` (+ layouts, `createTypedModal`) | `feedback`     | 2       | done           |
+| `DatePicker`                            | `forms`        | 2       | done           |
+| `BaseDropdown`                          | `forms`        | 2       | done           |
+| `PhoneNumberInput`                      | `forms`        | 3       | done           |
+| `CountryDropdown`                       | `forms`        | 3       | done           |
+| Toast stack                             | `feedback`     | overlap | keep `Toaster` |
 
 ## WebC (parity ports)
 
 All feature components ship `.webc.ts` entries (119 bundles). Key parity ports:
 
-| Component | `.webc.ts` |
-| --------- | ---------- |
-| `Modal` | ✅ |
-| `DatePicker`, `DateInput`, `InputNumber` | ✅ |
-| `BaseDropdown`, `CountryDropdown`, `PhoneNumberInput` | ✅ |
-| `Countdown` | ✅ |
+| Component                                             | `.webc.ts` |
+| ----------------------------------------------------- | ---------- |
+| `Modal`                                               | ✅         |
+| `DatePicker`, `DateInput`, `InputNumber`              | ✅         |
+| `BaseDropdown`, `CountryDropdown`, `PhoneNumberInput` | ✅         |
+| `Countdown`                                           | ✅         |
 
 Run `pnpm playground:webc` after `pnpm build:webc` to preview registered custom elements.
 

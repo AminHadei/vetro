@@ -6,19 +6,19 @@ This file orients AI agents and automated code review on the **Vetro UI** (`vetr
 
 All normative rules for humans and agents live in `docs/`. Cross-cutting topics, one file each:
 
-| Topic                                                                   | Doc                                                                  |
-| ----------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| First run, commands, env, the project task graph                        | [docs/content/getting-started.md](./docs/content/getting-started.md) |
-| Mental model, dual distribution, directory layout, entry layer          | [docs/content/architecture.md](./docs/content/architecture.md)       |
-| Component folder shape, naming, teleports, user-facing copy             | [docs/content/components.md](./docs/content/components.md)             |
-| Web-component build, Shadow-DOM style injection, dual-build pitfalls    | [docs/content/web-components.md](./docs/content/web-components.md)   |
-| UnoCSS wind4, theme tokens, `:uno:` prefix, `task:css:check`            | [docs/content/styling.md](./docs/content/styling.md)                 |
+| Topic                                                                   | Doc                                                                      |
+| ----------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| First run, commands, env, the project task graph                        | [docs/content/getting-started.md](./docs/content/getting-started.md)     |
+| Mental model, dual distribution, directory layout, entry layer          | [docs/content/architecture.md](./docs/content/architecture.md)           |
+| Component folder shape, naming, teleports, user-facing copy             | [docs/content/components.md](./docs/content/components.md)               |
+| Web-component build, Shadow-DOM style injection, dual-build pitfalls    | [docs/content/web-components.md](./docs/content/web-components.md)       |
+| UnoCSS wind4, theme tokens, `:uno:` prefix, `task:css:check`            | [docs/content/styling.md](./docs/content/styling.md)                     |
 | Storybook + MSW handler factories per feature                           | [docs/content/storybook-mocking.md](./docs/content/storybook-mocking.md) |
-| Vitest setup, MSW, VTU2 quirks, validated workarounds                   | [docs/content/testing.md](./docs/content/testing.md)                 |
-| Public API, TypeScript rules, post-change verification, hard boundaries | [docs/content/conventions.md](./docs/content/conventions.md)         |
-| Conventional Commits, branch naming, Husky hooks                        | [docs/content/git-conventions.md](./docs/content/git-conventions.md) |
-| Changesets — bump types and release flow on `main`                      | [docs/content/changesets.md](./docs/content/changesets.md)           |
-| GitHub Actions — CI and Storybook Pages                                 | [docs/content/ci.md](./docs/content/ci.md)                           |
+| Vitest setup, MSW, VTU2 quirks, validated workarounds                   | [docs/content/testing.md](./docs/content/testing.md)                     |
+| Public API, TypeScript rules, post-change verification, hard boundaries | [docs/content/conventions.md](./docs/content/conventions.md)             |
+| Conventional Commits, branch naming, Husky hooks                        | [docs/content/git-conventions.md](./docs/content/git-conventions.md)     |
+| Changesets — bump types and release flow on `main`                      | [docs/content/changesets.md](./docs/content/changesets.md)               |
+| GitHub Actions — CI and Storybook Pages                                 | [docs/content/ci.md](./docs/content/ci.md)                               |
 
 **When answering a developer question or performing a task, consult the relevant doc(s) first. Don't invent rules that aren't written down; don't paraphrase rules into prose that'll drift from the source.**
 

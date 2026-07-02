@@ -26,7 +26,7 @@
     <input
       :id="form.attrId"
       type="checkbox"
-      class=":uno: border-border size-4 shrink-0 cursor-pointer rounded border-2 accent-primary"
+      class=":uno: border-border accent-primary size-4 shrink-0 cursor-pointer rounded border-2"
       :class="[{ ':uno: mt-0.5': $slots['default'] }]"
       :checked="modelValue"
       @change="handleChange"

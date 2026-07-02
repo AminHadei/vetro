@@ -2,8 +2,9 @@
   import { onClickOutside, useEventListener } from '@vueuse/core';
   import { computed, inject, useTemplateRef } from 'vue';
 
-  import { contextMenuContextKey } from './context-menu.context';
   import { useTeleportTarget } from '@/features/shared/lib/composables/use-teleport-target';
+
+  import { contextMenuContextKey } from './context-menu.context';
 
   defineOptions({
     name: 'VetroContextMenuContent',

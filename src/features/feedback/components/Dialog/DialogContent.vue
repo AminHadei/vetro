@@ -2,8 +2,8 @@
   import { useEventListener } from '@vueuse/core';
   import { computed, inject } from 'vue';
 
-  import { createVariants } from '@/features/shared/lib/utils/variants.util';
   import { useTeleportTarget } from '@/features/shared/lib/composables/use-teleport-target';
+  import { createVariants } from '@/features/shared/lib/utils/variants.util';
 
   import { dialogContextKey } from './dialog.context';
   import type { DialogSize } from './dialog.types';

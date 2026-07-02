@@ -66,19 +66,19 @@
           v-if="isBottomSheet"
           data-vetro-modal-handle
           aria-hidden="true"
-          class=":uno: mx-auto mt-2 mb-1 h-1 w-10 rounded-full bg-border"
+          class=":uno: bg-border mx-auto mt-2 mb-1 h-1 w-10 rounded-full"
         />
 
         <div
           v-if="hasHeader"
           :class="[
-            ':uno: flex shrink-0 items-start justify-between border-b-2 border-border px-6 pt-5 pb-4',
+            ':uno: border-border flex shrink-0 items-start justify-between border-b-2 px-6 pt-5 pb-4',
             classes.header,
           ]"
         >
           <div class=":uno: flex-1">
             <slot name="header">
-              <h3 class=":uno: m-0 text-xl font-semibold text-foreground">
+              <h3 class=":uno: text-foreground m-0 text-xl font-semibold">
                 {{ title }}
               </h3>
             </slot>
@@ -91,7 +91,7 @@
           data-vetro-modal-close
           aria-label="Close"
           :class="[
-            ':uno: absolute top-5 right-5 cursor-pointer border-2 border-border bg-background px-2 py-1 text-lg leading-none',
+            ':uno: border-border bg-background absolute top-5 right-5 cursor-pointer border-2 px-2 py-1 text-lg leading-none',
             classes.closeButton,
           ]"
           @click="requestClose"
@@ -112,10 +112,7 @@
 
         <div
           v-if="hasFooter"
-          :class="[
-            ':uno: shrink-0 border-t-2 border-border px-6 pt-4 pb-5',
-            classes.footer,
-          ]"
+          :class="[':uno: border-border shrink-0 border-t-2 px-6 pt-4 pb-5', classes.footer]"
         >
           <slot name="footer" />
         </div>

@@ -2,8 +2,9 @@
   import { useEventListener } from '@vueuse/core';
   import { computed, inject } from 'vue';
 
-  import { drawerContextKey, type DrawerDirection } from './drawer.context';
   import { useTeleportTarget } from '@/features/shared/lib/composables/use-teleport-target';
+
+  import { drawerContextKey, type DrawerDirection } from './drawer.context';
 
   defineOptions({
     name: 'VetroDrawerContent',

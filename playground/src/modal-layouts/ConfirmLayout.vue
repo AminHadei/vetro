@@ -1,6 +1,7 @@
 <script setup lang="ts">
-  import { useModalContext } from '@/features/feedback';
   import { computed } from 'vue';
+
+  import { useModalContext } from '@/features/feedback';
 
   type ConfirmTone = 'danger' | 'warning' | 'info';
 

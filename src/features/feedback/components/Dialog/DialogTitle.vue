@@ -7,7 +7,7 @@
 <template>
   <h2
     data-slot="dialog-title"
-    class=":uno: font-head text-lg font-medium text-primary-foreground"
+    class=":uno: font-head text-primary-foreground text-lg font-medium"
   >
     <slot />
   </h2>

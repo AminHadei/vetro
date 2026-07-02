@@ -3,7 +3,6 @@
   import { computed } from 'vue';
   import VChart from 'vue-echarts';
 
-  import type { CategoryChartProps } from '../chart.types';
   import { buildBarChartOption } from '../../lib/bar-chart-option';
   import {
     defaultFillColors,
@@ -14,6 +13,7 @@
     formatValue,
   } from '../../lib/chart-defaults';
   import { registerVetroCharts } from '../../lib/register-echarts';
+  import type { CategoryChartProps } from '../chart.types';
 
   defineOptions({
     name: 'VetroBarChart',

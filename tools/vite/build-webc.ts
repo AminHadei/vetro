@@ -5,8 +5,8 @@ import { readdir, readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 
 import vue from '@vitejs/plugin-vue';
-import UnoCSS from 'unocss/vite';
 import { rimraf } from 'rimraf';
+import UnoCSS from 'unocss/vite';
 import { build, type Plugin } from 'vite-plus';
 
 const currentDir = import.meta.dirname;
