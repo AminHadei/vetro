@@ -60,8 +60,8 @@
     "changeset:status": "changeset status --verbose",
     "audit:check": "pnpm audit --audit-level moderate",
     "coverage:open": "open coverage/index.html",
-    "docs:dev": "pnpm --filter docs dev",
-    "docs:build": "pnpm --filter docs build",
+    "docs:dev": "pnpm --filter ./docs dev",
+    "docs:build": "pnpm --filter ./docs build",
     "playground:webc": "pnpm build:webc && vp dev --config tools/vite/vite.webc-playground.config.ts"
   },
   "dependencies": {
