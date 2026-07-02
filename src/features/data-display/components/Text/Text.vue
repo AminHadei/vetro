@@ -17,9 +17,9 @@
     base: 'font-head',
     variants: {
       as: {
-        p: ':uno: font-sans text-base',
-        li: ':uno: font-sans text-base',
-        a: ':uno: font-sans text-base underline-offset-2 decoration-primary hover:underline',
+        p: ':uno: text-base',
+        li: ':uno: text-base',
+        a: ':uno: text-base underline-offset-2 decoration-primary hover:underline',
         h1: ':uno: text-4xl font-bold lg:text-5xl',
         h2: ':uno: text-3xl font-semibold lg:text-4xl',
         h3: ':uno: text-2xl font-medium',

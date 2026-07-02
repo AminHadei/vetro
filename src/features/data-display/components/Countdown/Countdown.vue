@@ -16,7 +16,7 @@
   const props = withDefaults(defineProps<CountdownProps>(), {
     showIcon: true,
     iconClass: DEFAULT_ICON_CLASS,
-    textClass: 'font-sans text-foreground',
+    textClass: ':uno: text-foreground',
     format: 'short',
   });
 
@@ -99,7 +99,7 @@
       class="text-muted-foreground shrink-0"
       aria-hidden="true"
     />
-    <span :class="[textClass, showIcon ? 'ml-2' : '']">
+    <span :class="[textClass, showIcon ? ':uno: ml-2' : '']">
       <slot
         :countdown="countdownText"
         :expired="remaining <= 0"

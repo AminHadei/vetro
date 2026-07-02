@@ -47,10 +47,10 @@
 
     const parts: string[] = [];
     if (!props.customBackground) {
-      parts.push('bg-badge-default-bg');
+      parts.push(':uno: bg-badge-default-bg');
     }
     if (!props.customText) {
-      parts.push('text-badge-default-text');
+      parts.push(':uno: text-badge-default-text');
     }
     return parts.join(' ');
   });

@@ -1,6 +1,6 @@
 {
   "name": "vetro",
-  "version": "0.15.0",
+  "version": "1.0.0",
   "description": "Vetro UI — Vue 3 + TypeScript neo-brutalist component library (lib + web components), a Vue port of RetroUI",
   "files": [
     "dist"
@@ -108,12 +108,12 @@
     "vue-component-type-helpers": "^3.2.8",
     "vue-tsc": "^3.2.8"
   },
-  "packageManager": "pnpm@11.1.0",
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"
     ]
   },
+  "packageManager": "pnpm@11.1.0",
   "msw": {
     "workerDirectory": [
       "src/mocks"
