@@ -34,7 +34,15 @@ async function loadButtonWebcBundle(): Promise<LoadResult> {
 
 const meta: Meta<WebcArgs> = {
   title: 'Web Components/Button (webc)',
-  tags: ['webc'],
+  tags: ['webc', 'autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component:
+          'Storybook shows a sample web-component story for quick bundle smoke checks. To browse every shipped custom element with real composition and interactions, use the web-component playground instead: run `pnpm build:webc` then `pnpm playground:webc`.',
+      },
+    },
+  },
   loaders: [loadButtonWebcBundle],
   argTypes: {
     variant: {

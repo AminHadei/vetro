@@ -26,3 +26,10 @@ export const server = setupServer(...handlers);
 ## Webc stories
 
 Run `pnpm build:webc` before opening `.webc.stories.ts` entries. Bundles are served from `dist/webc/` via Storybook `staticDirs`.
+
+Storybook keeps a small sample web-component story for smoke checks. To preview **all** shipped custom elements with real composition and interactions, use the web-component playground:
+
+```sh
+pnpm build:webc
+pnpm playground:webc
+```
