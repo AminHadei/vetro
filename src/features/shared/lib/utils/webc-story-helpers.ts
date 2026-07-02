@@ -14,7 +14,8 @@ export interface LoadResult {
 export const loadWebcBundle = async (tag: string, bundleUrl: string): Promise<LoadResult> => {
   if (customElements.get(tag)) return { bundleError: null };
   try {
-    await import(/* @vite-ignore */ bundleUrl);
+    const resolvedBundleUrl = new URL(bundleUrl, window.location.href).toString();
+    await import(/* @vite-ignore */ resolvedBundleUrl);
     await customElements.whenDefined(tag);
     return { bundleError: null };
   } catch (error) {
