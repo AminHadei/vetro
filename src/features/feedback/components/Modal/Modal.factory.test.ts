@@ -62,8 +62,8 @@ describe('createTypedModal', () => {
     });
     await nextTick();
 
-    const layout = document.querySelector('[data-typed-modal-layout]');
-    expect(layout.dataset.tone).toBe('danger');
+    const layout = document.querySelector('[data-typed-modal-layout]') as HTMLElement | null;
+    expect(layout?.dataset['tone']).toBe('danger');
 
     const confirmBtn = document.querySelector('[data-confirm]') as HTMLButtonElement | null;
     expect(confirmBtn?.textContent).toBe('Delete');
