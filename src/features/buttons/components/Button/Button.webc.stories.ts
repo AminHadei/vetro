@@ -7,7 +7,7 @@ import {
 } from '@/features/shared/lib/utils/webc-story-helpers';
 
 const TAG = 'vetro-button';
-const BUNDLE_URL = '/webc-bundles/button.js';
+const BUNDLE_URL = './webc-bundles/button.js';
 
 interface WebcArgs {
   variant: 'default' | 'secondary' | 'outline' | 'link' | 'ghost';

@@ -3,7 +3,7 @@
  *
  * A webc story renders the *built* custom-element bundle (shadow DOM,
  * adopted stylesheets) rather than the source Vue component — this is the
- * surface we ship to consumers. Bundles are served from `:uno: /webc-bundles/*.js`
+ * surface we ship to consumers. Bundles are served from `./webc-bundles/*.js`
  * via Storybook's `staticDirs`; run `pnpm build:webc` before opening webc
  * stories.
  */
