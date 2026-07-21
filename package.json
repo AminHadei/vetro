@@ -1,6 +1,6 @@
 {
   "name": "vetro-ui",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Vetro UI — Vue 3 + TypeScript neo-brutalist component library (lib + web components), a Vue port of RetroUI",
   "homepage": "https://aminhadei.github.io/vetro/",
   "bugs": {
