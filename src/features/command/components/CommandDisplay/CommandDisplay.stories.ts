@@ -7,7 +7,7 @@ const meta = {
   component: CommandDisplay,
   tags: ['autodocs'],
   args: {
-    command: 'npm install @vetro/ui',
+    command: 'npm install vetro-ui',
   },
 } satisfies Meta<typeof CommandDisplay>;
 
@@ -18,6 +18,6 @@ export const Default: Story = {};
 
 export const Pnpm: Story = {
   args: {
-    command: 'pnpm add @vetro/ui',
+    command: 'pnpm add vetro-ui',
   },
 };

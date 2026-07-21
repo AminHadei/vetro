@@ -67,7 +67,7 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           npm publish --tag "pr-${{ inputs.pr_number }}" --ignore-scripts --no-git-checks
-          echo "Install with: pnpm add vetro@pr-${{ inputs.pr_number }}"
+          echo "Install with: pnpm add vetro-ui@pr-${{ inputs.pr_number }}"
 
       - uses: oven-sh/setup-bun@v2
 

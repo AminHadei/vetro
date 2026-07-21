@@ -47,7 +47,7 @@ Default URLs:
 
 ### Snapshot QA
 
-Workflow **Publish snapshot** (manual): enter the PR number. It checks out that branch, runs `changeset version --snapshot pr-<n>`, builds, publishes to npm with dist-tag `pr-<n>`, and uploads webc. Consumers: `pnpm add vetro@pr-<n>`.
+Workflow **Publish snapshot** (manual): enter the PR number. It checks out that branch, runs `changeset version --snapshot pr-<n>`, builds, publishes to npm with dist-tag `pr-<n>`, and uploads webc. Consumers: `pnpm add vetro-ui@pr-<n>`.
 
 ## See also
 

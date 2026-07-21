@@ -151,7 +151,7 @@ importers:
 
   playground:
     dependencies:
-      vetro:
+      vetro-ui:
         specifier: workspace:*
         version: link:..
 

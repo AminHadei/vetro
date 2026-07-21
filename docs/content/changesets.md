@@ -23,7 +23,7 @@ Never edit `package.json` `version` or `CHANGELOG.md` by hand. Never run `change
 
 ```md
 ---
-'vetro': minor
+'vetro-ui': minor
 ---
 
 Button: add `loading` prop that shows a spinner and disables clicks.
@@ -39,7 +39,7 @@ You can also run **Publish** manually via `workflow_dispatch`.
 
 ## Snapshot QA
 
-**Actions → Publish snapshot → Run workflow**, enter PR number. Install with `pnpm add vetro@pr-<number>`.
+**Actions → Publish snapshot → Run workflow**, enter PR number. Install with `pnpm add vetro-ui@pr-<number>`.
 
 ## Cheat sheet
 

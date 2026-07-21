@@ -65,12 +65,12 @@ docs/               # VitePress site (this site)
 
 `src/entries/` contains one file per `package.json` export:
 
-| Entry file | Export path   | Content                           |
-| ---------- | ------------- | --------------------------------- |
-| `index.ts` | `vetro`       | Vue plugin installer + re-exports |
-| `ui.ts`    | `vetro/ui`    | UI components                     |
-| `utils.ts` | `vetro/utils` | Utilities                         |
-| `types.ts` | `vetro/types` | Type-only exports                 |
+| Entry file | Export path      | Content                           |
+| ---------- | ---------------- | --------------------------------- |
+| `index.ts` | `vetro-ui`       | Vue plugin installer + re-exports |
+| `ui.ts`    | `vetro-ui/ui`    | UI components                     |
+| `utils.ts` | `vetro-ui/utils` | Utilities                         |
+| `types.ts` | `vetro-ui/types` | Type-only exports                 |
 
 Web components are exposed individually via the `./web-components/*` wildcard export.
 

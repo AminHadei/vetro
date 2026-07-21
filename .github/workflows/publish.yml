@@ -39,7 +39,7 @@ jobs:
           echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
           echo "package.json version: ${VERSION}"
 
-          if npm view "vetro@${VERSION}" version 2>/dev/null; then
+          if npm view "vetro-ui@${VERSION}" version 2>/dev/null; then
             echo "Version ${VERSION} is already on npm — skipping publish."
             echo "should_publish=false" >> "$GITHUB_OUTPUT"
           else

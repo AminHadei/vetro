@@ -18,9 +18,9 @@ describe('CommandDisplay', () => {
     const writeText = vi.fn<() => Promise<void>>().mockResolvedValue();
     Object.assign(navigator, { clipboard: { writeText } });
 
-    const wrapper = mount(CommandDisplay, { props: { command: 'npm install vetro' } });
+    const wrapper = mount(CommandDisplay, { props: { command: 'npm install vetro-ui' } });
     await wrapper.find('button').trigger('click');
 
-    expect(writeText).toHaveBeenCalledWith('npm install vetro');
+    expect(writeText).toHaveBeenCalledWith('npm install vetro-ui');
   });
 });

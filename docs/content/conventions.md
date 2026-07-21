@@ -6,12 +6,12 @@ Review-enforced rules in `vetro`. These are checked by automated review, enforce
 
 `package.json` exports map:
 
-- `vetro` → `src/entries/index.ts` — default export is a Vue plugin installer.
-- `vetro/ui` — components only.
-- `vetro/utils`
-- `vetro/types`
-- `vetro/style.css`
-- `vetro/web-components/*` — individual compiled web components.
+- `vetro-ui` → `src/entries/index.ts` — default export is a Vue plugin installer.
+- `vetro-ui/ui` — components only.
+- `vetro-ui/utils`
+- `vetro-ui/types`
+- `vetro-ui/style.css`
+- `vetro-ui/web-components/*` — individual compiled web components.
 
 When adding a new public export, update the matching `src/entries/*.ts` file. Internal helpers must not leak into entry files.
 

@@ -656,7 +656,7 @@
       <section class="playground-section">
         <h2>Command Display</h2>
         <div class="max-w-md">
-          <CommandDisplay command="pnpm add @vetro/ui" />
+          <CommandDisplay command="pnpm add vetro-ui" />
         </div>
       </section>
 

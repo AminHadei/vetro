@@ -7,6 +7,6 @@
     "dev": "vp dev"
   },
   "dependencies": {
-    "vetro": "workspace:*"
+    "vetro-ui": "workspace:*"
   }
 }
