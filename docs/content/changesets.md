@@ -32,8 +32,10 @@ Button: add `loading` prop that shows a spinner and disables clicks.
 ## Maintainer release flow
 
 1. Merge feature PRs to `main` (each with a changeset when user-visible).
-2. **Actions → Release → Run workflow** — runs `changeset version`, commits, tags.
-3. Tag push triggers **Publish** — npm, webc CDN, GitHub Release.
+2. Bump `package.json` version (manually, or via **Actions → Release** which runs `changeset version`, commits `chore(release): vX.Y.Z`, and tags).
+3. Every push to `main` runs **Publish**. If that version is not yet on npm: build, `npm publish`, optional webc CDN, GitHub Release. If already published, the workflow skips cleanly.
+
+You can also run **Publish** manually via `workflow_dispatch`.
 
 ## Snapshot QA
 

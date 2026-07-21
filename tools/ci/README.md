@@ -14,13 +14,13 @@ Supporting scripts for local checks and GitHub Actions. Workflow definitions liv
 
 ## Workflows
 
-| Workflow         | File                  | Trigger                                              |
-| ---------------- | --------------------- | ---------------------------------------------------- |
-| CI               | `ci.yml`              | PR + push to `main`                                  |
-| Deploy Pages     | `storybook-pages.yml` | push to `main`, tags, manual                         |
-| Release          | `release.yml`         | manual — `changeset version`, commit, tag            |
-| Publish          | `publish.yml`         | push tag `v*` — build, npm, webc CDN, GitHub Release |
-| Publish snapshot | `snapshot.yml`        | manual — prerelease for a PR number                  |
+| Workflow         | File                  | Trigger                                                                    |
+| ---------------- | --------------------- | -------------------------------------------------------------------------- |
+| CI               | `ci.yml`              | PR + push to `main`                                                        |
+| Deploy Pages     | `storybook-pages.yml` | push to `main`, manual                                                     |
+| Release          | `release.yml`         | manual — `changeset version`, commit, tag                                  |
+| Publish          | `publish.yml`         | push to `main` / manual — npm when version is new; optional webc + Release |
+| Publish snapshot | `snapshot.yml`        | manual — prerelease for a PR number                                        |
 
 See [docs/content/ci.md](../../docs/content/ci.md) for setup and secrets.
 
@@ -42,6 +42,6 @@ npx serve storybook-static
 | ------------------------------------------------------------------------------------------------------ | ---------------------------------------------- |
 | `NPM_TOKEN`                                                                                            | `publish.yml`, `snapshot.yml`                  |
 | `ENV_PRODUCTION`                                                                                       | Full `.env` file content for production builds |
-| `S3_REGION`, `S3_ENDPOINT`, `S3_BUCKET`, `S3_ACCESS_KEY_ID`, `S3_SECRET_ACCESS_KEY`, `VITE_S3_CDN_URL` | `publish-webc.ts`                              |
+| `S3_REGION`, `S3_ENDPOINT`, `S3_BUCKET`, `S3_ACCESS_KEY_ID`, `S3_SECRET_ACCESS_KEY`, `VITE_S3_CDN_URL` | `publish-webc.ts` (optional — skipped if unset) |
 
 `GITHUB_TOKEN` is provided automatically for PR comments.
