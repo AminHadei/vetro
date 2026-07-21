@@ -14,6 +14,7 @@ export default defineConfig({
   lastUpdated: true,
   ignoreDeadLinks: [/^(\.\/)?\.\.\//],
   head: [
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: `${docsBase}favicon.svg` }],
     ['meta', { name: 'theme-color', content: '#000000' }],
     ['meta', { name: 'color-scheme', content: 'light dark' }],
     ['meta', { property: 'og:type', content: 'website' }],
@@ -27,6 +28,8 @@ export default defineConfig({
     ],
   ],
   themeConfig: {
+    // VitePress prepends `base` to themeConfig logo paths — do not include docsBase here.
+    logo: { src: '/favicon.svg', alt: 'Vetro UI', width: 24, height: 24 },
     siteTitle: 'Vetro UI',
     externalLinkIcon: true,
     editLink: {
