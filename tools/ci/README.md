@@ -38,10 +38,10 @@ npx serve storybook-static
 
 ## Required repository secrets
 
-| Secret                                                                                                 | Used by                                        |
-| ------------------------------------------------------------------------------------------------------ | ---------------------------------------------- |
-| `NPM_TOKEN`                                                                                            | `publish.yml`, `snapshot.yml`                  |
-| `ENV_PRODUCTION`                                                                                       | Full `.env` file content for production builds |
+| Secret                                                                                                 | Used by                                         |
+| ------------------------------------------------------------------------------------------------------ | ----------------------------------------------- |
+| `NPM_TOKEN`                                                                                            | `publish.yml`, `snapshot.yml`                   |
+| `ENV_PRODUCTION`                                                                                       | Full `.env` file content for production builds  |
 | `S3_REGION`, `S3_ENDPOINT`, `S3_BUCKET`, `S3_ACCESS_KEY_ID`, `S3_SECRET_ACCESS_KEY`, `VITE_S3_CDN_URL` | `publish-webc.ts` (optional — skipped if unset) |
 
 `GITHUB_TOKEN` is provided automatically for PR comments.
